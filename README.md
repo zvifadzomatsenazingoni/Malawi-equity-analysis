@@ -1,12 +1,12 @@
 # Socio-spatial equity analysis
 
-The files shared provide a guide of all the analyses done for this project. For national estimates, survey weights were applied.
+The files shared provide a guide of all the analyses done for this project. 
 
 SOURCE DATA FILES
 
-1. Household wealth dataset (HH wealth data.csv): This file contains the wealth quintile and wealth scores for each of the households. The column variable labels are:
+1. Household wealth dataset (HH wealth data.csv): This file contains the wealth quintile and wealth scores for each of the households. For national estimates, survey weights were applied. The column variable labels are:
    
-      householdid: unique household identification number.
+     householdid: unique household identification number.
 
      centroidid: cluster location identification number.
 
@@ -16,7 +16,7 @@ SOURCE DATA FILES
 
      hhwt001: household survey weights.
 
-2. Cluster-level wealth percentage (WQ1 data.csv): This is an output file after aggregating the HH wealth data.csv and it contains the percentage of ultrapoor households at each cluster in addition to other variables. Once merged with the geolocations, it becomes a data source for the Emperical Bayesian Kriging (EBK) with an output file name WQ1_2 data.csv. Also, once converted into a shapefile, it becomes a data source for the hot spot mapping in SaTScan using the household counts per cluster. The column variable labels are:
+2. Cluster-level wealth percentage (WQ1 data.csv): This is an output file after aggregating the HH wealth data.csv and it contains the percentage of ultra-poor households at each cluster in addition to other variables. Once merged with the geolocations, it becomes a data source for the Emperical Bayesian Kriging (EBK) with an output file name WQ1_2 data.csv. Also, once converted into a shapefile, it becomes a data source for the hot spot mapping in SaTScan using the household counts per cluster. The column variable labels are:
    
     centroidid: cluster location unique identification number.
 
@@ -34,19 +34,19 @@ SOURCE DATA FILES
 
     WQ5: The total number of households per cluster that are the richest.
 
-    WQ1Prop: The percentage of households per cluster that are ultrapoor.
+    WQ1Prop: The percentage of households per cluster that are ultra-poor.
 
-   PovertyWQ4: The total number of households per cluster that are not ultrapoor. This is the sum of WQ2, WQ3, WQ4 and WQ5.
+   PovertyWQ4: The total number of households per cluster that are not ultra-poor. This is the sum of WQ2, WQ3, WQ4 and WQ5.
 
-3. District-level wealth percentage (WQ1 district.csv): The output file will contain the percentage of ultrapoor households at each district in Malawi and is used for the choropleth mapping. The column variable labels are:
+3. District-level wealth percentage (WQ1 district.csv): The output file will contain the percentage of ultra-poor households at each district in Malawi and is used for the choropleth mapping. The column variable labels are:
    
    ID_1: Malawi district code.
 
    NAME_1: Malawi district names.
 
-   WQ1Prop: The percentage of households per district that are ultrapoor.
+   WQ1Prop: The percentage of households per district that are ultra-poor.
 
-4. Ultra-poverty Empirical Bayesian Kriging raster file (Raster.tif): This is the kriged raster map of the percentage of ultrapoor households that will be partitioned into percentages of ultrapoor households per community. The partitioned results will be saved in WQ1_partitionedEBK.csv file. The output file data will be used for the Lee's statistic estimation.
+4. Ultra-poverty Empirical Bayesian Kriging raster file (Raster.tif): This is the kriged raster map of the percentage of ultra-poor households that will be partitioned into percentages of ultra-poor households per community. The partitioned results will be saved in WQ1_partitionedEBK.csv file. The output file data will be used for the Lee's statistic estimation.
 
 5. The geographic accessibility for secondary and tertiary healthcare facilities (GA SecondTert.csv): This file contains the geographic accessibility to secondary and tertiary healthcare facilities in Malawi and its associated univariate local indicators of spatial association (LISA) estimates. The column variable labels are:
    
@@ -66,7 +66,7 @@ SOURCE DATA FILES
    
    MORAN_LAG_secter: Lagged geographic accessibility values.
 
-6. The Lee's statistic file (Lees.csv): This is a bivariate spatial association output file for percentage of wealth households (100 - percentage of households that are ultrapoor) per community and geographic accessibility of secondary and tertiary healthcare facilities. The column variable labels are:
+6. The Lee's statistic file (Lees.csv): This is a bivariate spatial association output file for percentage of wealth households (100 - percentage of households that are ultra-poor) per community and geographic accessibility of secondary and tertiary healthcare facilities. The column variable labels are:
 
    SOURCE_ID: The spatial unit unique identifier.
 
