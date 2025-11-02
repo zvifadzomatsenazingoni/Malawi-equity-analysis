@@ -56,15 +56,9 @@ SOURCE DATA FILES
    
    SecTer_in_180: Number of secondary and tertiary healthcare facilities accessible in 3 hours of walking.
    
-   LISA_I_secter: LISA indices.
-   
    LISA_CL_secter: LISA cluster classifications.
    
    LISA_P_secter: LISA P-values for significance.
-   
-   MORAN_STD_secter: Standardized geographic accessibility values.
-   
-   MORAN_LAG_secter: Lagged geographic accessibility values.
 
 6. The Lee's statistic file (Lees.csv): This is a bivariate spatial association output file for percentage of wealth households (100 - percentage of households that are ultra-poor) per community and geographic accessibility of secondary and tertiary healthcare facilities. The column variable labels are:
 
