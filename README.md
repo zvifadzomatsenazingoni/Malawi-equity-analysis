@@ -38,7 +38,7 @@ SOURCE DATA FILES
 
    PovertyWQ4: The total number of households per cluster that are not ultrapoor. This is the sum of WQ2, WQ3, WQ4 and WQ5.
 
-3. District-level wealth percentage (WQ1 district.csv): The output file will contain the percentage of ultrapoor households at each district in Malawi. This data file is used for the choropleth mapping of the percentage of ultrapoor households at the district level. The column variable labels are:
+3. District-level wealth percentage (WQ1 district.csv): The output file will contain the percentage of ultrapoor households at each district in Malawi and is used for the choropleth mapping. The column variable labels are:
    
    ID_1: Malawi district code.
 
