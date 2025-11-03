@@ -4,7 +4,7 @@
 
 ***Setting a working directory - all files should be in Poverty code folder
 
-cd "/Users/ZMatsenaZingoni/Documents/UCLA/Poverty code"
+cd "/Poverty code"
 
 ***Import the household wealth data 
 ***this is the HH PHIA project dataset but with only centroidid and wealth quintile
@@ -120,8 +120,10 @@ import delimited "Lees.csv", clear
 
 *To get the number of communities in each cluster
 tabulate assoc_cat
+
 * To get the number of HCF in each cluster
 bysort assoc_cat: sum geoda_esti
+
 *To get the complement for wealth
 gen WQ1=100-povertyebk
 bysort assoc_cat: sum povertyebk
