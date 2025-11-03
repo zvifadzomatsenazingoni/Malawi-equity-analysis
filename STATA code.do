@@ -4,8 +4,6 @@
 
 ***Setting a working directory - all files should be in Poverty code folder
 
-cd "/Users/ZMatsenaZingoni/Documents/UCLA/Poverty code"
-
 ***Import the household wealth data 
 ***this is the HH PHIA project dataset but with only centroidid and wealth quintile
 
