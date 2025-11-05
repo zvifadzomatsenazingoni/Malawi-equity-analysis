@@ -45,7 +45,7 @@ These source data are used as an input for: (i) conducting Empirical Bayesian Kr
      
 **secter_in_180**: The number of hospitals that each community can access by walking for 3 hours.
      
-**lisa_cl_secter**: Results from the LISA analysis identifying the type of cluster each community belongs to. Communities in High-  high clusters have higher than average access to hospitals, communities in Low-Low clusters have lower than average access to       hospitals. 
+**lisa_cl_secter**: Results from the LISA analysis identifying the type of cluster each community belongs to. Communities in High-  High clusters have higher than average access to hospitals, communities in Low-Low clusters have lower than average access to       hospitals. 
 
 **lisa_p_secter**: This is the probability that the observed LISA statistic could occur by chance under the null hypothesis of spatial randomness.
      
