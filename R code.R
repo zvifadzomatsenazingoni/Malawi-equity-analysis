@@ -20,20 +20,20 @@ range(MWIraster)
 
 #Creating a file with a higher resolution
 
-MWIrasterdisag<-disaggregate(MWIraster,10)
+MWIdisaggregate<-disaggregate(MWIraster,10)
 
 # Reading the Malawi 9208 polygon shapefile
 
 EAs<-rgdal::readOGR("Shapefile/ECHOS_prioritization_mdf_fixedgeom.shp")
 
-# Creating a raster of the dis-aggregated map with same resolution as the Malawi shapefile. 
+# Creating a raster of the disaggregated map with same resolution as the Malawi shapefile. 
 # This step may take a few minutes to complete
 
-MWIMeandisag<-rasterize(EAs,MWIrasterdisag)
+MWIrasterize<-rasterize(EAs,MWIdisaggregate)
 
 #Extracting the mean ultra-poverty values for each of the Malawi 9208 communities
 #This step may take approximately 25 minutes
-WQ1<-unlist(lapply(1:9208,calc<-function(i) {mean(extract(MWIrasterdisag*(MWIMeandisag==i),EAs[i,])[[1]],na.rm=T)}))
+WQ1<-unlist(lapply(1:9208,calc<-function(i) {mean(extract(MWIdisaggregate*(MWIrasterize==i),EAs[i,])[[1]],na.rm=T)}))
 
 #To join the mean ultra-poverty values to each ID
 cbind(EAs$OBJECTID,WQ1)[1:5,]
