@@ -1,85 +1,73 @@
-# Socio-spatial equity analysis
+# Socio-spatial equity analysis of access to hospitals in Malawi
 
-The files shared provide a guide of all the analyses done for this project. 
+## SOURCE DATA FILES    
 
-SOURCE DATA FILES
+**1)   Dataset of ultra-poverty at the district-level (WQ1 district.csv)**: This file contains the percentage of ultra-poor households in each district. The column variable labels are:
+     
+     id_1: District identifier.
+     
+     name_1: District name. 
+     
+     WQ1prop: The percentage of ultra-poor households in each district.
 
-1. Household wealth dataset (HH wealth data.csv): This file contains the wealth quintile and wealth scores for each of the households. For national estimates, survey weights were applied. The column variable labels are:
-   
-     householdid: unique household identification number.
+These source data are used in ArcGIS to construct the district-level poverty map (Fig. 1a).
 
-     centroidid: cluster location identification number.
+**2) Dataset of cluster-level wealth (WQ1 data.csv)**: This file contains data on the Wealth Index for each cluster. The column variable labels are:
+    
+     centroidid: Cluster location identifier.
+     
+     wealthscorecont: The average Wealth Index for each cluster.
+     
+     HHID: The number of households in each cluster.
+     
+     WQ1: The number of households in each cluster that have a Wealth Index in the lowest quintile (i.e., ultra-poor).
+     
+     WQ2: The number of households in each cluster that have a Wealth Index in the second lowest quintile.
+     
+     WQ3: The number of households in each cluster that have a Wealth Index in the middle quintile.
+     
+     WQ4: The number of households in each cluster that have a Wealth Index in the second highest quintile.
+     
+     WQ5: The number of households in each cluster that have a Wealth Index in the highest quintile. 
+     
+     WQ1prop: The percentage of households in each cluster that have a Wealth Index in the lowest quintile (they are ultra-poor).
+     
+     PovertyWQ4: The number of households in each cluster that have a Wealth Index that is not in the lowest quintile (i.e., they
+     are not ultra-poor). This is the sum of WQ2, WQ3, WQ4 and WQ5.
 
-     wealthscorecont: numeric wealth score for each household.
+These source data are used as an input for: (i) conducting Empirical Bayesian Kriging in ArcGIS to generate the poverty map of the percentage of ultra-poor households per km2 (Fig. 1b), and (ii) performing a hot-spot analysis of the number of ultra-poor households in SaTScan (Fig. 1c). 
 
-     wealthquintile: five wealth quintile categories for each household defined as 1"Lowest" 2"Second" 3"Middle" 4"Fourth" 5"Highest.
+**3)  Dataset for LISA analysis (GA SecondTert.csv)**: This file contains the number of hospitals that each community can access by walking for 3 hours, and the results from the LISA analysis. The column variable labels are:
 
-     hhwt001: household survey weights.
+     OBJECTID/ EACODE: Community identifier.
+     
+     SecTer_in_180: The number of hospitals that each community can access by walking for 3 hours.
+     
+     LISA_CL_secter: Results from the LISA analysis identifying the type of cluster each community belongs to. Communities in High-      high clusters have higher than average access to hospitals, communities in Low-Low clusters have lower than average access to       hospitals. 
+     
+These source data are used in ArcGIS to map the number of accessible hospitals for each community in Malawi (Fig. 2b), and to plot the LISA cluster map (Fig. 2c). 
 
-2. Cluster-level wealth percentage (WQ1 data.csv): This is an output file after aggregating the HH wealth data.csv and it contains the percentage of ultra-poor households at each cluster in addition to other variables. Once merged with the geolocations, it becomes a data source for the Emperical Bayesian Kriging (EBK) with an output file name WQ1_2 data.csv. Also, once converted into a shapefile, it becomes a data source for the hot spot mapping in SaTScan using the household counts per cluster. The column variable labels are:
-   
-    centroidid: cluster location unique identification number.
+**4) Dataset for Lee’s analysis (Lees.csv)**: This file contains the percentage of households in each community that have a Wealth Index in one of the top four quintiles, the number of hospitals that each community can access by walking for 3 hours, and the results from the Lees analysis. The column variable labels are:
 
-    wealthscorecont: the average wealth scores per cluster.
+     SOURCE_ID: Community identifier. 
+     
+     PovertyEBK: The percentage of households in each community that have a Wealth Index in one of the top four quintiles
+     
+     geoDA_esti: The number of hospitals that each community can access by walking for 3 hours.  
+     
+     ASSOC_CAT: Results from the Lee’s analysis identifying the Local Spatial Association Category (LSAC) for each community. 
+     Communities in the High-High LSAC have higher than average wealth associated with higher than average access to hospitals,          communities in the High-Low LSAC have higher than average wealth associated with lower than average access to hospitals,            communities in the Low-High LSAC have lower than average wealth associated with higher than average access to hospitals, and        communities in the Low-Low LSAC have lower than average wealth associated with lower than average access to hospitals. 
 
-    HHID: The total number of households per cluster.
+These source data are used in ArcGIS to plot the Lee’s scatterplot (Fig. 3a) and the Lee’s map (Fig. 3b).
 
-    WQ1: The total number of households per cluster that are poorest.
+## CODE FILES
 
-    WQ2: The total number of households per cluster that are poor.
+**1. STATA code**: This is a do file that uses: (i) the MPHIA2 dataset to estimate the average (and median) percentage of ultra-poor households at the national-level, and the range of the Wealth Index at the household-level, (ii) the dataset for the LISA analysis (GA SecondTert.csv) to calculate the average, median, and range for the number of hospitals that can be accessed at the national-level; to calculate the average number of hospitals that can be accessed in each LISA cluster; to count the number of communities that cannot access any of the hospitals and the number of communities in each LISA cluster, (iii) the dataset for Lee’s analysis (Lees.csv) to calculate the percentage of communities that are in each LSAC; to calculate the average number of hospitals that communities in each LSAC can access; to calculate the average percentage of ultra-poor households in each LSAC. 
 
-    WQ3: The total number of households per cluster that are of middle wealth.
+**2. R code**: This is an R script for raster partitioning using a high-resolution map of Malawi and a raster map for the percentage of ultra-poor households.  
 
-    WQ4: The total number of households per cluster that are rich.
+## ACKNOWLEDGMENTS
 
-    WQ5: The total number of households per cluster that are the richest.
+This script was developed by Zvifadzo Matsena Zingoni, Ph.D., as part of a project analyzing socio-spatial equity in access to healthcare. PHIA data are freely available for registered users at the PHIA project website (https://phia-data.icap.columbia.edu). Geolocations of hospitals in Malawi were obtained from the Ministry of Health in Malawi, and cannot be provided for reasons of confidentiality.
 
-    WQ1Prop: The percentage of households per cluster that are ultra-poor.
-
-   PovertyWQ4: The total number of households per cluster that are not ultra-poor. This is the sum of WQ2, WQ3, WQ4 and WQ5.
-
-3. District-level wealth percentage (WQ1 district.csv): The output file will contain the percentage of ultra-poor households at each district in Malawi and is used for the choropleth mapping. The column variable labels are:
-   
-   ID_1: Malawi district code.
-
-   NAME_1: Malawi district names.
-
-   WQ1Prop: The percentage of households per district that are ultra-poor.
-
-4. Ultra-poor Empirical Bayesian Kriging raster file (Raster.tif): This is the kriged raster map of the percentage of ultra-poor households that will be partitioned into percentages of ultra-poor households per community. The partitioned results will be saved in WQ1_partitionedEBK.csv file. The output file data will be used for the Lee's statistic estimation.
-
-5. The geographic accessibility for secondary and tertiary healthcare facilities (GA SecondTert.csv): This file contains the geographic accessibility to secondary and tertiary healthcare facilities in Malawi and its associated univariate local indicators of spatial association (LISA) estimates. The column variable labels are:
-   
-   OBJECTID:The spatial unit simple unique identifier.
-   
-   EACODE:The spatial unit long unique identifier.
-   
-   SecTer_in_180: Number of secondary and tertiary healthcare facilities accessible in 3 hours of walking.
-   
-   LISA_CL_secter: LISA cluster classifications.
-   
-   LISA_P_secter: LISA P-values for significance.
-
-6. The Lee's statistic file (Lees.csv): This is a bivariate spatial association output file for percentage of wealth households (100 - percentage of households that are ultra-poor) per community and geographic accessibility of secondary and tertiary healthcare facilities. The column variable labels are:
-
-   SOURCE_ID: The spatial unit unique identifier.
-
-   PovertyEBK: The percentage of wealth households in each spatial unit.
-
-   geoDA_esti: The number of secondary and tertiary healthcare facilities accessible in 3 hours of walking.
-
-   P_VALUE: The significance of the cluster classification.
-
-   ASSOC_CAT: The cluster classifications.
-
-CODE FILES
-
-1. STATA code: This is a do file with all the STATA codes for data management and analyses used in this project.
-
-2. R code: This is an R script with all the codes for raster partitioning.
-
-
-ACKNOWLEDGMENTS 
-
-This script was developed by Zvifadzo Matsena Zingoni, Ph.D., as part of a project analyzing socio-spatial equity analysis of access to healthcare. PHIA data are freely available for registered users at the PHIA project website: https://phiadata.icap.columbia.edu/. Malawi HCF geolocations were obtained from the Ministry of Health in Malawi, and cannot be provided for reasons of confidentiality.
 
