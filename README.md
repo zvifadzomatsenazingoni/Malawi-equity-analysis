@@ -44,6 +44,8 @@ These source data are used as an input for: (i) conducting Empirical Bayesian Kr
 **secter_in_180**: The number of hospitals that each community can access by walking for 3 hours.
      
 **lisa_cl_secter**: Results from the LISA analysis identifying the type of cluster each community belongs to. Communities in High-  high clusters have higher than average access to hospitals, communities in Low-Low clusters have lower than average access to       hospitals. 
+
+**lisa_p_secter**: This is the probability that the observed LISA statistic could occur by chance under the null hypothesis of spatial randomness.
      
 These source data are used in ArcGIS to map the number of accessible hospitals for each community in Malawi (Fig. 2b), and to plot the LISA cluster map (Fig. 2c). 
 
@@ -56,7 +58,9 @@ These source data are used in ArcGIS to map the number of accessible hospitals f
 **geoDA_esti**: The number of hospitals that each community can access by walking for 3 hours.  
      
 **ASSOC_CAT**: Results from the Lee’s analysis identifying the Local Spatial Association Category (LSAC) for each community. 
-Communities in the High-High LSAC have higher than average wealth associated with higher than average access to hospitals,          communities in the High-Low LSAC have higher than average wealth associated with lower than average access to hospitals,            communities in the Low-High LSAC have lower than average wealth associated with higher than average access to hospitals, and        communities in the Low-Low LSAC have lower than average wealth associated with lower than average access to hospitals. 
+Communities in the High-High LSAC have higher than average wealth associated with higher than average access to hospitals,          communities in the High-Low LSAC have higher than average wealth associated with lower than average access to hospitals,            communities in the Low-High LSAC have lower than average wealth associated with higher than average access to hospitals, and        communities in the Low-Low LSAC have lower than average wealth associated with lower than average access to hospitals.
+
+ 
 
 These source data are used in ArcGIS to plot the Lee’s scatterplot (Fig. 3a) and the Lee’s map (Fig. 3b).
 
