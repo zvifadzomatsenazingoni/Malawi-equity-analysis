@@ -51,15 +51,15 @@ These source data are used in ArcGIS to map the number of accessible hospitals f
 
 **4) Dataset for Lee’s analysis (Lees.csv)**: This file contains the percentage of households in each community that have a Wealth Index in one of the top four quintiles, the number of hospitals that each community can access by walking for 3 hours, and the results from the Lees analysis. The column variable labels are:
 
-**SOURCE_ID**: Community identifier. 
+**source_id**: Community identifier. 
      
-**PovertyEBK**: The percentage of households in each community that have a Wealth Index in one of the top four quintiles
+**povertyEBK**: The percentage of households in each community that have a Wealth Index in one of the top four quintiles
      
 **geoDA_esti**: The number of hospitals that each community can access by walking for 3 hours.
 
-**P_VALUE**: This is the probability that the observed bivariate Local Spatial Association Category (LSAC) statistic could occur by chance under the null hypothesis of spatial randomness.
+**p_value**: This is the probability that the observed bivariate Local Spatial Association Category (LSAC) statistic could occur by chance under the null hypothesis of spatial randomness.
      
-**ASSOC_CAT**: Results from the Lee’s analysis identifying the LSAC for each community. 
+**assoc_cat**: Results from the Lee’s analysis identifying the LSAC for each community. 
 Communities in the High-High LSAC have higher than average wealth associated with higher than average access to hospitals,          communities in the High-Low LSAC have higher than average wealth associated with lower than average access to hospitals,            communities in the Low-High LSAC have lower than average wealth associated with higher than average access to hospitals, and        communities in the Low-Low LSAC have lower than average wealth associated with lower than average access to hospitals.
 
 These source data are used in ArcGIS to plot the Lee’s scatterplot (Fig. 3a) and the Lee’s map (Fig. 3b).
