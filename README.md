@@ -39,7 +39,7 @@ These source data are used as an input for: (i) conducting Empirical Bayesian Kr
 
 **3) Dataset for LISA analysis (GA SecondTert.csv)**: This file contains the number of hospitals that each community can access by walking for 3 hours, and the results from the LISA analysis. The column variable labels are:
 
-**OBJECTID/ EACODE**: Community identifier.
+**objectid/ eacode**: Community identifier.
      
 **SecTer_in_180**: The number of hospitals that each community can access by walking for 3 hours.
      
