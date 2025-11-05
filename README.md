@@ -41,9 +41,9 @@ These source data are used as an input for: (i) conducting Empirical Bayesian Kr
 
 **objectid/ eacode**: Community identifier.
      
-**SecTer_in_180**: The number of hospitals that each community can access by walking for 3 hours.
+**secter_in_180**: The number of hospitals that each community can access by walking for 3 hours.
      
-**LISA_CL_secter**: Results from the LISA analysis identifying the type of cluster each community belongs to. Communities in High-  high clusters have higher than average access to hospitals, communities in Low-Low clusters have lower than average access to       hospitals. 
+**lisa_cl_secter**: Results from the LISA analysis identifying the type of cluster each community belongs to. Communities in High-  high clusters have higher than average access to hospitals, communities in Low-Low clusters have lower than average access to       hospitals. 
      
 These source data are used in ArcGIS to map the number of accessible hospitals for each community in Malawi (Fig. 2b), and to plot the LISA cluster map (Fig. 2c). 
 
