@@ -32,7 +32,7 @@ These source data are used in ArcGIS to construct the district-level poverty map
      
 **WQ1prop**: The percentage of households in each cluster that have a Wealth Index in the lowest quintile (they are ultra-poor).
      
-**PovertyWQ4**: The number of households in each cluster that have a Wealth Index that is not in the lowest quintile (i.e., they
+**povertyWQ4**: The number of households in each cluster that have a Wealth Index that is not in the lowest quintile (i.e., they
 are not ultra-poor). This is the sum of WQ2, WQ3, WQ4 and WQ5.
 
 These source data are used as an input for: (i) conducting Empirical Bayesian Kriging in ArcGIS to generate the poverty map of the percentage of ultra-poor households per km2 (Fig. 1b), and (ii) performing a hot-spot analysis of the number of ultra-poor households in SaTScan (Fig. 1c). 
