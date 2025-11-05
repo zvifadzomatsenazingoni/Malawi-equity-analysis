@@ -2,13 +2,13 @@
 
 ## SOURCE DATA FILES    
 
-1)   Dataset of ultra-poverty at the district-level (WQ1 district.csv): This file contains the percentage of ultra-poor households in each district. The column variable labels are:
+**1) Dataset of ultra-poverty at the district-level (WQ1 district.csv)**: This file contains the percentage of ultra-poor households in each district. The column variable labels are:
      
-     id_1: District identifier.
+id_1: District identifier.
      
-     name_1: District name. 
+name_1: District name. 
      
-     WQ1prop: The percentage of ultra-poor households in each district.
+WQ1prop: The percentage of ultra-poor households in each district.
 
 These source data are used in ArcGIS to construct the district-level poverty map (Fig. 1a).
 
