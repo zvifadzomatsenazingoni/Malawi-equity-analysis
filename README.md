@@ -49,7 +49,7 @@ access to hospitals.
 
 **lisa_p_secter**: The p-value for the LISA statistic for each community; this represents the probability of observing a local spatial autocorrelation as strong as, or stronger than, the one observed, under the null hypothesis of spatial randomness.
      
-These source data are used in ArcGIS to map the number of accessible hospitals for each community in Malawi (Fig. 2b), and to plot the LISA cluster map (Fig. 2c). 
+These source data are used in ArcGIS and GeoDA to map the number of accessible hospitals for each community in Malawi (Fig. 2b), and to plot the LISA cluster map (Fig. 2c), respectively. 
 
 **4) Dataset for Lee’s analysis (Lees.csv)**: This file contains the percentage of households in each community that have a Wealth Index in one of the top four quintiles, the number of hospitals that each community can access by walking for 3 hours, and the results from the Lees analysis. The column variable labels are:
 
